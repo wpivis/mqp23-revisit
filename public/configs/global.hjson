@@ -3,6 +3,7 @@
     configsList: [
         html-demo
         image-demo
+        urgency-demo
         html-input
         survey-demo
         cleveland
@@ -22,6 +23,9 @@
         },
         image-demo: {
             path: image-demo/config-image-demo.hjson
+        },
+        urgency-demo: {
+            path: urgency-demo/config-urgency-demo.hjson
         },
         html-input: {
             path: html-input/config-html-input.hjson
