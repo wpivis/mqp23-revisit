@@ -4,6 +4,7 @@
         html-demo
         image-demo
         urgency-demo
+        figure-demo
         html-input
         survey-demo
         cleveland
@@ -23,6 +24,9 @@
         },
         image-demo: {
             path: image-demo/config-image-demo.hjson
+        },
+        figure-demo: {
+            path: figure-demo/config-figure-demo.hjson
         },
         urgency-demo: {
             path: urgency-demo/config-urgency-demo.hjson
