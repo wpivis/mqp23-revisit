@@ -32,7 +32,7 @@
             type: questionnaire
             response: [
                 {
-                    id: q4
+                    id: q1
                     prompt: Short text example
                     required: true
                     location: aboveStimulus
@@ -40,7 +40,7 @@
                     placeholder: Enter your answer here
                 }
                 {
-                    id: q5
+                    id: q2
                     prompt: Long text example
                     required: true
                     location: aboveStimulus
