@@ -1,9 +1,9 @@
 {
     $schema: https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/GlobalConfigSchema.json
     configsList: [
+        urgency-demo
         html-demo
         image-demo
-        urgency-demo
         figure-demo
         html-input
         survey-demo
