@@ -1,0 +1,171 @@
+{
+    $schema: https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json
+    studyMetadata: {
+        title: Color Demo
+        version: pilot
+        authors: [
+            The reVISit Team
+        ]
+        date: 2023-04-14
+        description: A demo of color in reVISit
+        organizations: [
+            University of Utah
+            WPI
+            University of Toronto
+        ]
+    }
+    uiConfig: {
+        contactEmail: test@test.com
+        helpTextPath: figure-demo/help.md
+        logoPath: assets/revisitLogoSquare.svg
+        withProgressBar: true
+        autoDownloadStudy: false
+        sidebar: true
+    }
+    components: {
+        introduction: {
+            type: markdown
+            path: figure-demo/introduction.md
+            response: []
+        }
+        dotplot-low: {
+            meta: {
+                difficulty: 1
+                nr-dots: 20
+                temp: low
+            }
+            title: T1-low-temp
+            description: Which bin would you throw away paper in?
+            instruction: Which bin would you throw away paper in?
+            type: image
+            path: color-demo/1.jpg
+            style: {
+                width: 400px
+            }
+            nextButtonLocation: sidebar
+            response: [
+                {
+                    id: image-demo-response
+                    prompt: "Answer:"
+                    required: false
+                    location: belowStimulus
+                    type: radio
+                    options: [
+                        {
+                            label: Green
+                            value: opt-1
+                        }
+                        {
+                            label: Red
+                            value: opt-2
+                        }
+                        {
+                            label: Orange
+                            value: opt-3
+                        }
+                        {
+                            label: Blue
+                            value: opt-4
+                        }
+                    ]
+                }
+            ]
+        }
+        graph-literacy-5: {
+            meta: {
+                question: 5
+            }
+            title: graph-literacy-5
+            description: Graph Question
+            instruction: Which bin would you throw away trash in?
+            type: image
+            path: color-demo/1.jpg
+            style: {
+                width: 400px
+            }
+            nextButtonLocation: sidebar
+            response: [
+                {
+                    id: image-demo-response
+                    prompt: "Answer:"
+                    required: false
+                    location: belowStimulus
+                    type: radio
+                    options: [
+                        {
+                            label: Green
+                            value: opt-1
+                        }
+                        {
+                            label: Red
+                            value: opt-2
+                        }
+                        {
+                            label: Orange
+                            value: opt-3
+                        }
+                        {
+                            label: Blue
+                            value: opt-4
+                        }
+                    ]
+                }
+            ]
+        }
+        graph-literacy-6: {
+            meta: {
+                question: 6
+            }
+            title: graph-literacy-6
+            description: Graph Question
+            instruction: What emotion do you associate with the shown color?
+            type: image
+            path: color-demo/3.jpg
+            style: {
+                width: 400px
+            }
+            nextButtonLocation: sidebar
+            response: [
+                {
+                    id: graph-literacy-6-response
+                    prompt: "Answer:"
+                    required: false
+                    location: belowStimulus
+                    type: shortText
+                }
+            ]
+        }
+        barChart: {
+            type: website
+            nextButtonLocation: sidebar
+            meta: {
+                difficulty: hard
+            }
+            description: Question that asks users to count the number of bars that have a value greater than 1.
+            instruction: How many bars have a value greater than 1?
+            path: color-demo/bar-chart.html
+            response: [
+                {
+                    id: html-page
+                    prompt: "Answer:"
+                    required: true
+                    location: sidebar
+                    type: numerical
+                    placeholder: 0-7
+                    min: 0
+                    max: 7
+                }
+            ]
+        }
+    }
+    sequence: { 
+        order: fixed
+        components:  [
+            introduction
+            dotplot-low
+            graph-literacy-5
+            graph-literacy-6
+            barChart
+        ]
+    }
+}

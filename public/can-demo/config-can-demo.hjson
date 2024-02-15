@@ -1,0 +1,68 @@
+{
+    $schema: https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json
+    studyMetadata: {
+        title: Trash / Paper in Cans
+        version: pilot
+        authors: [
+            The reVISit Team
+        ]
+        date: 2023-04-14
+        description: A simple demo of using stimuli in an HTML file that renders a D3 visualization. Data is collected via a numeric response field.
+        organizations: [
+            University of Utah
+            WPI
+            University of Toronto
+        ]
+    }
+    uiConfig: {
+        contactEmail: test@test.com
+        helpTextPath: can-demo/help.md
+        logoPath: assets/revisitLogoSquare.svg
+        withProgressBar: true
+        autoDownloadStudy: false
+        sidebar: true
+    }
+    components: {
+        introduction: {
+            type: markdown
+            path: can-demo/introduction.md
+            response: []
+        }
+        barChart: {
+            type: website
+            nextButtonLocation: sidebar
+            meta: {
+                difficulty: hard
+            }
+            description: Question that asks users to count the number of bars that have a value greater than 1.
+            instruction: Which bin would you throw away trash in?
+            path: can-demo/bar-chart.html
+            response: [
+                {
+                    id: image-demo-response
+                    prompt: "Answer:"
+                    required: false
+                    location: belowStimulus
+                    type: radio
+                    options: [
+                        {
+                            label: Left
+                            value: opt-1
+                        }
+                        {
+                            label: Right
+                            value: opt-2
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    sequence: { 
+        order: fixed
+        components:  [
+            introduction
+            barChart
+        ]
+    }
+}
