@@ -1,13 +1,13 @@
 {
     $schema: https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json
     studyMetadata: {
-        title: Trash / Paper in Cans
+        title: Color Association
         version: pilot
         authors: [
             The reVISit Team
         ]
         date: 2023-04-14
-        description: A simple demo of using stimuli in an HTML file that renders a D3 visualization. Data is collected via a numeric response field.
+        description: A simple demo that asks the user to sort discarded trash / recyclying into the color bin they feel most appropiate.
         organizations: [
             University of Utah
             WPI
@@ -29,20 +29,57 @@
             response: []
         }
         barChart: {
-            type: website
-            nextButtonLocation: sidebar
-            meta: {
-                difficulty: hard
+            description: Can color question
+            instruction: Which can would you discard trash in?
+            type: react-component   
+            path: ReactComponent.tsx
+            parameters: {
+                data:[ 
+                    "yellow"
+                    "green"
+                    ]
+                }
+                response: [
+                    {
+                        id: image-demo-response
+                        prompt: "Answer:"
+                        required: true
+                        location: sidebar
+                        type: radio
+                        options: [
+                            {
+                                label: Left
+                                value: opt-1
+                            }
+                            {
+                                label: Right
+                                value: opt-2
+                            }
+                        ]
+                    }
+                ]
+                nextButtonLocation: sidebar
+                instructionLocation: sidebar
             }
-            description: Question that asks users to count the number of bars that have a value greater than 1.
-            instruction: Which bin would you throw away trash in?
-            path: can-demo/bar-chart.html
+        barChart1: {
+            description: Can color question
+            instruction:
+                Which can would you discard trash in?
+            type: react-component   
+            path: ReactComponent.tsx
+            parameters: {
+                data:
+                [ 
+                    "green"
+                    "blue"
+                ]
+            }
             response: [
                 {
-                    id: image-demo-response
+                    id: image-demo
                     prompt: "Answer:"
-                    required: false
-                    location: belowStimulus
+                    required: true
+                    location: sidebar
                     type: radio
                     options: [
                         {
@@ -56,6 +93,8 @@
                     ]
                 }
             ]
+            nextButtonLocation: sidebar
+            instructionLocation: sidebar
         }
     }
     sequence: { 
@@ -63,6 +102,7 @@
         components:  [
             introduction
             barChart
+            barChart1
         ]
     }
 }

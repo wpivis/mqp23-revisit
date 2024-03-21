@@ -1,13 +1,13 @@
 {
     $schema: https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json
     studyMetadata: {
-        title: Figure Demo
+        title: Graphical Urgency Demo
         version: pilot
         authors: [
             The reVISit Team
         ]
         date: 2023-04-14
-        description: A demo of image stimuli, based on the study design by Padilla et al., Frontiers in Psychology, 2021 (doi:10.3389/fpsyg.2020.579267). Data is collected via form fields.
+        description: A demo of urgency image stimuli, based on the study design by Zikmund-Fisher et al., Graphics help patients distinguish between urgent and non-urgen deviations, 2021. Data is collected via form fields.
         organizations: [
             University of Utah
             WPI
@@ -48,20 +48,20 @@
                     id: image-demo-response
                     prompt: "Answer:"
                     required: true
-                    location: sidebar
-                    type: radio
+                    location: belowStimulus
+                    type: slider
                     options: [
                         {
                             label: Low
-                            value: "1"
+                            value: 0
                         }
                         {
                             label: Med
-                            value: "2"
+                            value: 50
                         }
                         {
                             label: High
-                            value: "3"
+                            value: 100
                         }
                     ]
                 }
@@ -87,20 +87,20 @@
                     id: image-demo-response
                     prompt: "Answer:"
                     required: true
-                    location: sidebar
-                    type: radio
+                    location: belowStimulus
+                    type: slider
                     options: [
                         {
                             label: Low
-                            value: "1"
+                            value: 0
                         }
                         {
                             label: Med
-                            value: "2"
+                            value: 50
                         }
                         {
                             label: High
-                            value: "3"
+                            value: 100
                         }
                     ]
                 }
@@ -126,20 +126,60 @@
                     id: image-demo-response
                     prompt: "Answer:"
                     required: true
-                    location: sidebar
+                    location: belowStimulus
                     type: radio
+                    type: slider
                     options: [
                         {
                             label: Low
-                            value: "1"
+                            value: 0
                         }
                         {
                             label: Med
-                            value: "2"
+                            value: 50
                         }
                         {
                             label: High
-                            value: "3"
+                            value: 100
+                        }
+                    ]
+                }
+            ]
+        }
+        dotplot-higher: {
+            title: T3-high-temp
+            meta: {
+                difficulty: 1
+                nr-dots: 20
+                temp: hi
+            }
+            description: High temperature variant
+            instruction: How urgent are the results in the following image.
+            type: image
+            path: figure-demo/4.png
+            style: {
+                width: 800px
+            }
+            nextButtonLocation: sidebar
+            response: [
+                {
+                    id: image-demo-response
+                    prompt: "Answer:"
+                    required: true
+                    location: belowStimulus
+                    type: slider
+                    options: [
+                        {
+                            label: Low
+                            value: 0
+                        }
+                        {
+                            label: Med
+                            value: 50
+                        }
+                        {
+                            label: High
+                            value: 100
                         }
                     ]
                 }

@@ -37,11 +37,8 @@
             title: T1-low-temp
             description: Low temperature variant
             instruction: Will you issue blankets to the alpacas?
-            type: image
-            path: image-demo/uncertainty-1.png
-            style: {
-                width: 800px
-            }
+            type: react-component
+            path: ReactComponent.tsx
             nextButtonLocation: sidebar
             response: [
                 {

@@ -3,8 +3,8 @@
     configsList: [
         urgency-demo
         color-demo
-        html-demo
         can-demo
+        html-demo
         image-demo
         figure-demo
         html-input
